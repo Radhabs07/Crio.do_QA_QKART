@@ -13,29 +13,34 @@ apply plugin: 'application'
 group 'org.example'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
+sourceCompatibility = 11
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '4.4.3'
-    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.0.0-alpha-1'
+    //testCompile group: 'junit', name: 'junit', version: '4.12'
+    // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
+implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '5.7.0'
 
+// https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.18.1'
+
+// https://mvnrepository.com/artifact/org.testng/testng
+testImplementation group: 'org.testng', name: 'testng', version: '7.9.0'
 }
 
 // Additional config for Crio workspace
 buildDir = '/tmp/external_build'
 
-task startScript(type:Exec) {
-    commandLine '../selenium-run.sh'
-}
+// task startScript(type:Exec) {
+//     commandLine '../selenium-run.sh'
+// }
 
-run.dependsOn startScript
+// run.dependsOn startScript
 
-test.dependsOn startScript
+// test.dependsOn startScript
 
 test {
     useTestNG() {
@@ -64,4 +69,4 @@ test {
 
 }
 
-mainClassName = 'QKART_SANITY_LOGIN.Module1.QkartSanity'
+mainClassName = 'QKART_SANITY_LOGIN.Module1.QkartSanityV2'

@@ -8,12 +8,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class Register {
-    RemoteWebDriver driver;
+    WebDriver driver;
     String url = "https://crio-qkart-frontend-qa.vercel.app/register";
     public String lastGeneratedUsername = "";
 
     public Register(WebDriver driver2) {
-        this.driver = (RemoteWebDriver) driver2;
+        this.driver = (WebDriver) driver2;
     }
 
     public void navigateToRegisterPage() {

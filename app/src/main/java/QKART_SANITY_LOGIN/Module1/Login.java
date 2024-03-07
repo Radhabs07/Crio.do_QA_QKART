@@ -6,11 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class Login {
-    RemoteWebDriver driver;
+    WebDriver driver;
     String url = "https://crio-qkart-frontend-qa.vercel.app/login";
 
     public Login(WebDriver driver2) {
-        this.driver =(RemoteWebDriver) driver2;
+        this.driver =(WebDriver) driver2;
     }
 
     public void navigateToLoginPage() {
